@@ -10,16 +10,16 @@ export default class CustomerRoutes {
   }
 
   private configRoutes = (): void => {
-    // POST /api/v1/post
+    // POST /api/v1/customer
     this.router.post("/", this.customerController.addNewCustomer);
 
-    // GET /api/v1/post
+    // GET /api/v1/customer
     this.router.get("/", this.customerController.retrieveAllCustomers);
 
-    // PUT /api/v1/post/:id
+    // PUT /api/v1/customer/:id
     this.router.put("/:id", this.customerController.updateCustomer);
 
-    // DELETE /api/v1/post/:id
+    // DELETE /api/v1/customer/:id
     this.router.delete("/:id", this.customerController.deleteCustomer);
   };
 

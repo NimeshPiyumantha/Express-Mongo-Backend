@@ -10,16 +10,16 @@ export default class ItemRoutes {
   }
 
   private configRoutes = (): void => {
-    // POST /api/v1/post
+    // POST /api/v1/item
     this.router.post("/", this.itemController.addNewItem);
 
-    // GET /api/v1/post
+    // GET /api/v1/item
     this.router.get("/", this.itemController.retrieveAllItems);
 
-    // PUT /api/v1/post/:code
+    // PUT /api/v1/item/:code
     this.router.put("/:code", this.itemController.updateItem);
 
-    // DELETE /api/v1/post/:code
+    // DELETE /api/v1/item/:code
     this.router.delete("/:code", this.itemController.deleteItem);
   };
 

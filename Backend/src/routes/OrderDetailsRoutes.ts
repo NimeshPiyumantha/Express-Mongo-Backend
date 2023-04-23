@@ -11,13 +11,13 @@ export default class OrderDetailsRoutes {
   }
 
   private configRoutes = (): void => {
-    // GET /api/v1/post
+    // GET /api/v1/ordersDetails
     this.router.get("/", this.ordersDetailsController.retrieveAllOrdersDetails);
 
-    // PUT /api/v1/post/:id
+    // PUT /api/v1/ordersDetails/:id
     this.router.put("/:id", this.ordersDetailsController.updateOrderDetails);
 
-    // DELETE /api/v1/post/:id
+    // DELETE /api/v1/ordersDetails/:id
     this.router.delete("/:id", this.ordersDetailsController.deleteOrderDetails);
   };
 
