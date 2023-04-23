@@ -16,10 +16,10 @@ export default class ItemRoutes {
     // GET /api/v1/post
     this.router.get("/", this.itemController.retrieveAllItems);
 
-    // PUT /api/v1/post/:id
+    // PUT /api/v1/post/:code
     this.router.put("/:code", this.itemController.updateItem);
 
-    // DELETE /api/v1/post/:id
+    // DELETE /api/v1/post/:code
     this.router.delete("/:code", this.itemController.deleteItem);
   };
 
