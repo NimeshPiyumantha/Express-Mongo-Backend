@@ -1,4 +1,4 @@
-import { RequestHandler, Request, Response } from "express";
+import { Request, RequestHandler, Response } from "express";
 import { Category } from "../models/Category";
 
 export default class CategoryController {
@@ -71,10 +71,7 @@ export default class CategoryController {
     }
   };
 
-  deleteCategory: RequestHandler = async (
-    req: Request,
-    res: Response
-  ): Promise<Response> => {
+  deleteCategory = async (req: Request, res: Response): Promise<Response> => {
     try {
       // destructuring assignment
       const { id } = req.params;

@@ -21,6 +21,9 @@ export default class PostRoutes {
 
     // DELETE /api/v1/post/:id
     this.router.delete("/:id", this.postController.deletePost);
+
+    // GET /api/v1/post/category/:id
+    this.router.get("/category/:id", this.postController.searchPostByCategory);
   };
 
   public getRouter = (): Router => {

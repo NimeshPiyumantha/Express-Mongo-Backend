@@ -6,9 +6,28 @@ import express, { Request, Response } from "express";
 import db from "mongoose";
 import routes from "./routes";
 import { json, urlencoded } from "body-parser";
+import cors from "cors";
 
 // Create the express app
 const app = express();
+
+// allow CORS
+// app.use(cors());
+
+// Here you can add more origins to allow CORS
+const allowedOrigins = ["http://localhost:3000"];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.indexOf(origin!) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
 
 // if you are receiving JSON data in request-body
 app.use(json());
@@ -30,7 +49,7 @@ db.connect(process.env.MONGO_DB_URL!)
     console.log("Database connected!");
 
     app.listen(process.env.PORT, () => {
-      console.log("Server is listening on Port 4000");
+      console.log(`Server is running on port ${process.env.PORT}`);
     });
   })
   .catch((error) => {
