@@ -6,6 +6,7 @@ export interface IPost extends Document {
   hoursCount: number;
   lecturerName: string;
   tags: string[];
+  categoryId: string;
 }
 
 // creating schema
@@ -29,6 +30,10 @@ const PostSchema = new Schema(
     },
     tags: {
       type: Array,
+      required: true,
+    },
+    categoryId: {
+      type: String,
       required: true,
     },
   },
