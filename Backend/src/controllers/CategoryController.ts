@@ -1,28 +1,27 @@
 import { RequestHandler, Request, Response } from "express";
 
-export default class OrderController {
-  addNewOrder: RequestHandler = async (
+export default class CategoryController {
+    createCategory: RequestHandler = async (
     req: Request,
     res: Response
   ): Promise<Response> => {
     return res;
   };
 
-  retrieveAllOrders: RequestHandler = async (
+  retrieveAllCategories: RequestHandler = async (    req: Request,
+    res: Response
+  ): Promise<Response> => {
+    return res;
+  };
+
+  updateCategory: RequestHandler = async (
     req: Request,
     res: Response
   ): Promise<Response> => {
     return res;
   };
 
-  updateOrder: RequestHandler = async (
-    req: Request,
-    res: Response
-  ): Promise<Response> => {
-    return res;
-  };
-
-  deleteOrder: RequestHandler = async (
+  deleteCategory : RequestHandler = async (
     req: Request,
     res: Response
   ): Promise<Response> => {
